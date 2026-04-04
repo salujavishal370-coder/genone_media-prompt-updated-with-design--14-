@@ -132,7 +132,7 @@ export default function Home() {
                 key={i}
                 to={service.path}
                 // Hover expansion reduced to 1.8 for a more subtle feel
-                className="group relative flex-1 hover:flex-[1.2] transition-all duration-700 ease-in-out rounded-2xl overflow-hidden bg-transparent"
+                className="group relative flex-1 hover:flex-[1.22] transition-all duration-700 ease-in-out rounded-2xl overflow-hidden bg-transparent"
               >
                 {/* Background Image - Starting with subtle transparency */}
                 <img
