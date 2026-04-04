@@ -55,14 +55,14 @@ export default function Navbar() {
         className={cn(
           "max-w-7xl mx-auto px-6 py-3 rounded-full transition-all duration-500 flex justify-between items-center",
           scrolled 
-            ? 'bg-white/10 backdrop-blur-2xl border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]' 
+            ? 'bg-white/10 backdrop-blur-2xl border border-fuchsia-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]' 
             : 'bg-transparent'
         )}
       >
         {/* Logo with Glow */}
         <Link to="/" className="group">
           <div className="text-xl md:text-2xl font-bold uppercase tracking-[0.15em] text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
-            Gen <span className="text-blue-400 group-hover:text-white transition-colors duration-300">One</span>
+            Gen <span className="text-fuchsia-400 group-hover:text-white transition-colors duration-300">One</span>
           </div>
         </Link>
 
@@ -74,12 +74,12 @@ export default function Navbar() {
               to={link.path}
               className={cn(
                 'text-[12px] uppercase tracking-[0.2em] font-bold transition-all relative group',
-                location.pathname === link.path ? 'text-blue-400' : 'text-white/80 hover:text-white'
+                location.pathname === link.path ? 'text-fuchsia-400' : 'text-white/80 hover:text-white'
               )}
             >
               {link.name}
               <span className={cn(
-                "absolute -bottom-1 left-0 h-[2px] bg-blue-400 shadow-[0_0_10px_#60a5fa] transition-all duration-300",
+                "absolute -bottom-1 left-0 h-[2px] bg-fuchsia-400 shadow-[0_0_10px_#60a5fa] transition-all duration-300",
                 location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
               )} />
             </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
           
           <Link
             to="/contact"
-            className="relative px-7 py-2.5 bg-blue-500 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] active:scale-95"
+            className="relative px-7 py-2.5 bg-fuchsia-500 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] active:scale-95"
           >
             Start Project
           </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Icon */}
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-          <div className="bg-blue-500/20 p-2 rounded-lg border border-blue-500/40">
+          <div className="bg-fuchsia-500/20 p-2 rounded-lg border border-fuchsia-500/40">
              {isOpen ? <X size={20} /> : <Menu size={20} />}
           </div>
         </button>
