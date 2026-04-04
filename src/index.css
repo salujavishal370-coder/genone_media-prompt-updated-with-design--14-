@@ -1,0 +1,55 @@
+/* Fonts: Archivo (Bold/Black) for Headings, Inter for Body */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Archivo:ital,wght@0,700;0,800;0,900;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Archivo: Massive impact ke liye */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo", sans-serif;
+  
+  --color-accent: #00ffcc;
+  --color-bg: #050505;
+  --color-surface: #111111;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --accent-rgb: 0, 255, 204;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-white selection:bg-accent selection:text-black;
+    -webkit-font-smoothing: antialiased;
+    /* Kerning behtar karne ke liye */
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings ko thoda compact dikhane ke liye */
+  h1, h2, h3 {
+    @apply font-display uppercase tracking-tighter leading-[0.9];
+  }
+}
+
+@layer utilities {
+  .glow-text {
+    /* Subtle Neon Glow */
+    text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
+  }
+  
+  .glass {
+    @apply bg-white/[0.01] backdrop-blur-3xl border border-white/10;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .glass:hover {
+    @apply bg-white/[0.04] border-white/20;
+    transform: translateY(-5px);
+  }
+
+  .anti-gravity {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+}
