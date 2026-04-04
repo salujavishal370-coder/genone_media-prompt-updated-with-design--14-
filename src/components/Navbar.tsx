@@ -14,38 +14,55 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Navbar dikhega ya nahi
+  const [lastScrollY, setLastScrollY] = useState(0); // Pichli scroll position
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // 1. Scrolled state for glass effect (vahi purana logic)
+      setScrolled(currentScrollY > 20);
+
+      // 2. Hide/Show Logic
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Niche scroll kar rahe ho toh hide kar do (lekin thoda niche jaane ke baad)
+        setIsVisible(false);
+      } else {
+        // Upar scroll kar rahe ho toh show kar do
+        setIsVisible(true);
+      }
+
+      // Update pichli position
+      setLastScrollY(currentScrollY);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  }, [lastScrollY]); // lastScrollY update hone par effect dobara chale
 
   return (
-    <nav
+    <nav 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6',
-        scrolled ? 'py-4' : 'py-8'
+        scrolled ? 'py-4' : 'py-8',
+        /* Yahan main magic hai: translate-y-0 matlab normal, -translate-y-full matlab upar gayab */
+        isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
       <div 
         className={cn(
-          "max-w-7xl mx-auto px-6 py-3 rounded-2xl transition-all duration-500 flex justify-between items-center",
-          /* Jab scroll ho tab yeh Floating Glass ban jayega */
+          "max-w-7xl mx-auto px-6 py-3 rounded-full transition-all duration-500 flex justify-between items-center",
           scrolled 
-            ? 'bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]' 
+            ? 'bg-white/10 backdrop-blur-2xl border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]' 
             : 'bg-transparent'
         )}
       >
-        {/* Logo Section */}
-        <Link to="/" className="group flex items-center gap-2">
-          <div className="text-xl md:text-2xl font-bold uppercase tracking-[0.15em] text-white">
-            Gen <span className="text-blue-500 group-hover:text-blue-400 transition-colors">One</span>
+        {/* Logo with Glow */}
+        <Link to="/" className="group">
+          <div className="text-xl md:text-2xl font-bold uppercase tracking-[0.15em] text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+            Gen <span className="text-blue-400 group-hover:text-white transition-colors duration-300">One</span>
           </div>
         </Link>
 
@@ -56,14 +73,13 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={cn(
-                'text-[13px] uppercase tracking-widest font-semibold transition-all hover:text-blue-400 relative group',
-                location.pathname === link.path ? 'text-blue-400' : 'text-white/70'
+                'text-[12px] uppercase tracking-[0.2em] font-bold transition-all relative group',
+                location.pathname === link.path ? 'text-blue-400' : 'text-white/80 hover:text-white'
               )}
             >
               {link.name}
-              {/* Active Line Indicator */}
               <span className={cn(
-                "absolute -bottom-1 left-0 h-[2px] bg-blue-500 transition-all duration-300",
+                "absolute -bottom-1 left-0 h-[2px] bg-blue-400 shadow-[0_0_10px_#60a5fa] transition-all duration-300",
                 location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
               )} />
             </Link>
@@ -71,42 +87,19 @@ export default function Navbar() {
           
           <Link
             to="/contact"
-            className="px-7 py-2.5 bg-blue-600 text-white text-xs font-bold uppercase tracking-tighter rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-blue-600/20"
+            className="relative px-7 py-2.5 bg-blue-500 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] active:scale-95"
           >
             Start Project
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white p-2" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {/* Mobile Menu Icon */}
+        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          <div className="bg-blue-500/20 p-2 rounded-lg border border-blue-500/40">
+             {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </div>
         </button>
       </div>
-
-      {/* Mobile Menu (Glass Effect) */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute top-[90%] left-6 right-6 bg-zinc-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:hidden z-40 shadow-2xl"
-          >
-            <div className="flex flex-col gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-3xl font-bold tracking-tighter flex justify-between items-center group"
-                >
-                  <span className="group-hover:text-blue-500 transition-colors">{link.name}</span>
-                  <ChevronRight className="text-blue-500 group-hover:translate-x-2 transition-transform" />
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 }

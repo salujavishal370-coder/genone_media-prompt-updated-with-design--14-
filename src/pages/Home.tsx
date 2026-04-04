@@ -109,70 +109,85 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-[#050505] text-white">
-        <div className="max-w-7xl mx-auto">
-
-          {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                OUR <span className="text-blue-500">EXPERTISE</span>
-              </h2>
-            </div>
-            <Link to="/services" className="text-blue-500 font-bold flex items-center gap-2 hover:gap-4 transition-all">
-              View All Services <ChevronRight size={18} />
-            </Link>
+<section className="py-20 px-6 bg-[#050505] text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* TOP SECTION: Tagda Content */}
+        <div className="text-center mb-16 space-y-4">
+          <div className="inline-block px-4 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">
+            Agency Expertise
           </div>
-
-          {/* Expandable Cards Container */}
-          {/* Height reduced to 400px as requested */}
-          <div className="flex flex-col md:flex-row gap-3 h-[400px] w-full">
-            {services.map((service, i) => (
-              <Link
-                key={i}
-                to={service.path}
-                // Hover expansion reduced to 1.8 for a more subtle feel
-                className="group relative flex-1 hover:flex-[1.22] transition-all duration-700 ease-in-out rounded-2xl overflow-hidden bg-transparent"
-              >
-                {/* Background Image - Starting with subtle transparency */}
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  /* opacity-80: Shuruat mein 20% transparent rahega (Thoda background dikhega)
-                     group-hover:opacity-100: Hover karte hi image ekdum saaf aur bright ho jayegi
-                  */
-                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-60 transition-all duration-700 ease-in-out"
-                />
-
-                {/* Floating Arrow (Top Right) */}
-                <div className="absolute top-5 right-5 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
-                  <div className="bg-white text-black p-2 rounded-full">
-                    <ArrowUpRight size={20} />
-                  </div>
-                </div>
-
-                {/* Title (Visible when NOT hovered) */}
-                <div className="absolute bottom-6 left-6 z-10 group-hover:opacity-0 transition-opacity duration-300">
-                  <h3 className="text-xl font-bold leading-tight">{service.title}</h3>
-                </div>
-
-                {/* White Expandable Content Box (Visible ONLY on hover) */}
-                <div className="absolute inset-x-4 bottom-4 z-20 pointer-events-none">
-                  <div className="bg-white p-6 rounded-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <h3 className="text-black text-lg font-black mb-2 uppercase tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-zinc-600 text-sm leading-snug">
-                      {service.desc}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase">
+            Digital <span className="text-blue-500">Mastery</span>
+          </h2>
+          <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            We don't just follow trends; we set them. From high-performance web architecture 
+            to cinematic social storytelling, we deliver results that scale.
+          </p>
         </div>
-      </section>
+
+        {/* BOTTOM SECTION: Compact Expandable Cards */}
+        {/* Height reduced to 350px for a very compact/sleek look */}
+        <div className="flex flex-col md:flex-row gap-4 h-[350px] w-full">
+          {services.map((service, i) => (
+            <Link
+              key={i}
+              to={service.path}
+              /* flex-1 base width, hover:flex-[1.25] for subtle expansion */
+              className="group relative flex-1 hover:flex-[1.25] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5"
+            >
+              {/* Background Image - Subtle starting opacity */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 scale-105 group-hover:scale-100"
+              />
+
+              {/* Overlay Gradient for Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
+
+              {/* Top Right Arrow */}
+              <div className="absolute top-5 right-5 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                <div className="bg-blue-600 text-white p-2 rounded-full shadow-lg">
+                  <ArrowUpRight size={16} />
+                </div>
+              </div>
+
+              {/* Static Title (Visible initially) */}
+              <div className="absolute inset-0 flex items-end p-6 z-10 group-hover:opacity-0 transition-opacity duration-300">
+                <h3 className="text-lg font-black uppercase tracking-tighter leading-none">
+                  {service.title}
+                </h3>
+              </div>
+
+              {/* Hover Content: Compact White Box */}
+              <div className="absolute inset-x-3 bottom-3 z-20 pointer-events-none">
+                <div className="bg-white p-5 rounded-2xl opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out shadow-2xl">
+                  <span className="text-[9px] text-blue-600 font-black uppercase tracking-widest mb-1 block">Expertise</span>
+                  <h3 className="text-black text-base font-extrabold mb-1.5 uppercase leading-none">
+                    {service.title}
+                  </h3>
+                  <p className="text-zinc-500 text-[11px] leading-snug font-medium">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Optional: Bottom Link */}
+        <div className="mt-12 text-center">
+          <Link 
+            to="/services" 
+            className="inline-flex items-center gap-2 text-zinc-500 hover:text-blue-500 font-bold text-xs uppercase tracking-[0.2em] transition-colors"
+          >
+            View All Services <ChevronRight size={14} />
+          </Link>
+        </div>
+        
+      </div>
+    </section>
 
       {/* Portfolio with Scroll Transform (y1 applied here) */}
       <motion.section style={{ y: y1 }} className="py-32 px-6 relative z-20">
