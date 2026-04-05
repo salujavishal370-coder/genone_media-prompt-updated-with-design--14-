@@ -73,20 +73,7 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-indigo-700/10 blur-[140px] rounded-full pointer-events-none z-10" />
 
         {/* ---- Centered Content ---- */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
-
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="inline-flex items-center gap-2 px-5 py-2 mb-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-md"
-          >
-            <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-[0.25em] text-white/70 uppercase">
-              Aether Creative Agency
-            </span>
-          </motion.div>
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pt-30">
 
           {/* Main Headline — each line slides up from below */}
           <h1 className="font-display font-black text-white tracking-tighter leading-[1.05]">
@@ -133,7 +120,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.82 }}
-            className="mt-8 text-base md:text-xl text-white/45 max-w-2xl leading-relaxed font-medium"
+            className="mt-5 text-base md:text-xl text-white/45 max-w-2xl leading-relaxed font-medium"
           >
             Done-for-you content creation that converts strangers into loyal customers.{' '}
             <span className="text-white/75 font-semibold">
@@ -146,7 +133,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.05 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center"
+            className="mt-3 flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
             <Link
               to="/contact"
