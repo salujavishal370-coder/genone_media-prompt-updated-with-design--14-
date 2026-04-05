@@ -5,6 +5,9 @@ import { ArrowRight, Play, Code, Palette, ChevronRight, ArrowUpRight } from 'luc
 import { Link } from 'react-router-dom';
 import { cn } from '../utils/cn';
 import FAQ from '../components/FAQ';
+import ContactSection from '../components/ContactSection';
+import CTASection from '../components/CTASection';
+import IndustriesSection from '../components/IndustriesSection';
 
 const services = [
   {
@@ -297,6 +300,9 @@ export default function Home() {
         </div>
       </section>
 
+      <CTASection />
+      <IndustriesSection />
+
       {/* Portfolio with Scroll Transform (y1 applied here) */}
       {/* <motion.section style={{ y: y1 }} className="py-32 px-6 relative z-20">
         <div className="max-w-7xl mx-auto">
@@ -318,6 +324,7 @@ export default function Home() {
       </motion.section> */}
 
       <FAQ />
+      <ContactSection />
     </PageWrapper>
   );
 }
