@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Code, Palette, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../utils/cn';
+import FAQ from '../components/FAQ';
 
 const services = [
   {
@@ -160,6 +161,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Animated Dual Line Brands Section */}
+      <section className="py-12 md:py-16 bg-[#090514] border-b border-white/5 w-full flex flex-col items-center relative overflow-hidden">
+        {/* Fading Edges to simulate smooth entry/exit */}
+        <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-[#090514] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-[#090514] to-transparent z-10 pointer-events-none" />
+
+        <p className="text-zinc-500 font-medium text-sm mb-10 md:mb-12 text-center px-4 uppercase tracking-[0.2em] relative z-20">
+          Partnering with the world's leading enterprises
+        </p>
+        
+        <div className="flex flex-col gap-8 w-full">
+          {/* Top Slider - Moves Right */}
+          <div className="flex w-max animate-marquee-right opacity-60">
+            {[
+              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Tushar Saluja", "Lahori Zeera",
+              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Tushar Saluja", "Lahori Zeera"
+            ].map((brand, i) => (
+              <div key={`top-${i}`} className="flex items-center gap-3 shrink-0 px-8 md:px-16 cursor-default">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-white relative -top-[2px]" viewBox="0 0 24 24" fill="currentColor">
+                  {i % 5 === 0 && <path d="M12 2L2 12h5v8h10v-8h5L12 2z" />}
+                  {i % 5 === 1 && <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />}
+                  {i % 5 === 2 && <path d="M12 2L3 11h6v4h6v-4h6L12 2zm-5 12.5L3 18.5V21h18v-2.5L17 14.5 12 19.5 7 14.5z" />}
+                  {i % 5 === 3 && <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />}
+                  {i % 5 === 4 && <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />}
+                </svg>
+                <span className="text-xl md:text-3xl font-display font-medium text-white tracking-tight whitespace-nowrap">
+                  {brand}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Slider - Moves Left */}
+          {/* <div className="flex w-max animate-marquee-left opacity-60">
+            {[
+              "Lahori Zeera", "Wealthbeats Finserv", "Tushar Saluja", "Delhi Dental Clinic", "Adi Kailash",
+              "Lahori Zeera", "Wealthbeats Finserv", "Tushar Saluja", "Delhi Dental Clinic", "Adi Kailash"
+            ].map((brand, i) => (
+              <div key={`bottom-${i}`} className="flex items-center gap-3 shrink-0 px-8 md:px-16 cursor-default">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-white relative -top-[2px]" viewBox="0 0 24 24" fill="currentColor">
+                  {i % 5 === 0 && <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />}
+                  {i % 5 === 1 && <path d="M12 2L2 12h5v8h10v-8h5L12 2z" />}
+                  {i % 5 === 2 && <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />}
+                  {i % 5 === 3 && <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />}
+                  {i % 5 === 4 && <path d="M12 2L3 11h6v4h6v-4h6L12 2zm-5 12.5L3 18.5V21h18v-2.5L17 14.5 12 19.5 7 14.5z" />}
+                </svg>
+                <span className="text-xl md:text-3xl font-display font-medium text-white tracking-tight whitespace-nowrap">
+                  {brand}
+                </span>
+              </div>
+            ))}
+          </div> */}
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 px-6 bg-[#090514] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -242,7 +298,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio with Scroll Transform (y1 applied here) */}
-      <motion.section style={{ y: y1 }} className="py-32 px-6 relative z-20">
+      {/* <motion.section style={{ y: y1 }} className="py-32 px-6 relative z-20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-24 text-center">
             SELECTED <span className="text-accent">WORKS</span>
@@ -259,7 +315,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
+
+      <FAQ />
     </PageWrapper>
   );
 }

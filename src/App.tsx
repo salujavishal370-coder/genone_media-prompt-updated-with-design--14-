@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 // Layout
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MouseGlow from './components/MouseGlow';
 
 // Pages
 import Home from './pages/Home';
@@ -34,8 +35,10 @@ const ScrollToTop = () => {
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
+    <>
+      <MouseGlow />
+      <Router>
+        <ScrollToTop />
       <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Navbar />
         <main className="flex-grow">
@@ -63,5 +66,6 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+    </>
   );
 }
