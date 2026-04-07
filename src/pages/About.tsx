@@ -8,8 +8,8 @@ export default function About() {
       <section className="pt-48 pb-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl mb-32">
-            <h1 className="text-6xl md:text-9xl font-display font-bold tracking-tighter mb-12">
-              WE ARE <span className="text-accent">AETHER</span>
+            <h1 className="text-5xl md:text-9xl font-display font-bold tracking-tighter mb-12">
+              WE ARE <span className="block text-6xl md:text-8xl lg:text-[96px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 pb-3">AETHER</span>
             </h1>
             <p className="text-xl md:text-3xl text-white/60 leading-relaxed">
               A collective of designers, developers, and storytellers dedicated to pushing the 

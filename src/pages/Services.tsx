@@ -41,7 +41,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-32">
             <h1 className="text-6xl md:text-9xl font-display font-bold tracking-tighter mb-12">
-              OUR <span className="text-accent">SERVICES</span>
+              OUR <span                 className="block text-5xl md:text-7xl lg:text-[96px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 pb-3">SERVICES</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/50 leading-relaxed">
               We offer a holistic approach to digital creation. From the first frame to the last line of code, 

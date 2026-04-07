@@ -218,12 +218,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 h-[350px] w-full">
+          <div className="flex flex-col md:flex-row gap-6 md:h-[450px] w-full">
             {services.map((service, i) => (
               <Link
                 key={i}
                 to={service.path}
-                className="group relative flex-1 hover:flex-[1.25] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5"
+                className="group relative h-[250px] md:h-full md:flex-1 md:hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-[2.5rem] overflow-hidden bg-zinc-900/50 border border-white/10"
               >
                 <img
                   src={service.image}
