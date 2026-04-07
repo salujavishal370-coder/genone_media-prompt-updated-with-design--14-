@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { cn } from '../utils/cn';
+import logo from '../assets/companyLogo2.png.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -14,40 +15,33 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // Navbar dikhega ya nahi
-  const [lastScrollY, setLastScrollY] = useState(0); // Pichli scroll position
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // 1. Scrolled state for glass effect (vahi purana logic)
       setScrolled(currentScrollY > 20);
 
-      // 2. Hide/Show Logic
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Niche scroll kar rahe ho toh hide kar do (lekin thoda niche jaane ke baad)
         setIsVisible(false);
       } else {
-        // Upar scroll kar rahe ho toh show kar do
         setIsVisible(true);
       }
 
-      // Update pichli position
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]); // lastScrollY update hone par effect dobara chale
+  }, [lastScrollY]);
 
   return (
     <nav 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6',
         scrolled ? 'py-4' : 'py-8',
-        /* Yahan main magic hai: translate-y-0 matlab normal, -translate-y-full matlab upar gayab */
         isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
@@ -59,11 +53,13 @@ export default function Navbar() {
             : 'bg-transparent'
         )}
       >
-        {/* Logo with Glow */}
-        <Link to="/" className="group">
-          <div className="text-xl md:text-2xl font-bold uppercase tracking-[0.15em] text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
-            Gen <span className="text-fuchsia-400 group-hover:text-white transition-colors duration-300">One</span>
-          </div>
+        {/* Logo */}
+        <Link to="/" className="group flex items-center gap-3">
+          <img 
+            src={logo} 
+            alt="Aether Logo" 
+            className="h-12 md:h-12 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Nav */}
