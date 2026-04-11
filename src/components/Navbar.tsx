@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { cn } from '../utils/cn';
-import logo from '../assets/TransparentComapnyLogo.png';
+import logo from '../assets/genoneLogo.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -38,27 +38,33 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav 
+    <nav
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6',
         scrolled ? 'py-4' : 'py-8',
         isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
-      <div 
+      <div
         className={cn(
           "max-w-7xl mx-auto px-6 py-3 rounded-full transition-all duration-500 flex justify-between items-center",
-          scrolled 
-            ? 'bg-white/10 backdrop-blur-2xl border border-fuchsia-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]' 
+          scrolled
+            ? 'bg-white/10 backdrop-blur-2xl border border-fuchsia-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]'
             : 'bg-transparent'
         )}
       >
         {/* Logo */}
-        <Link to="/" className="group flex items-center gap-3">
-          <img 
-            src={logo} 
-            alt="Aether Logo" 
-            className="h-12 md:h-12 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform duration-300"
+        <Link to="/" className="group flex items-center gap-2 sm:gap-3">
+          <img
+            src={logo}
+            alt="Aether Logo"
+            className="
+      h-10 sm:h-12 md:h-14 lg:h-16 
+      w-auto object-contain 
+      brightness-110 
+      group-hover:scale-105 
+      transition-transform duration-300
+    "
           />
         </Link>
 
@@ -80,7 +86,7 @@ export default function Navbar() {
               )} />
             </Link>
           ))}
-          
+
           <Link
             to="/contact"
             className="relative px-7 py-2.5 bg-fuchsia-500 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] active:scale-95"
@@ -92,7 +98,7 @@ export default function Navbar() {
         {/* Mobile Menu Icon */}
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
           <div className="bg-fuchsia-500/20 p-2 rounded-lg border border-fuchsia-500/40">
-             {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </div>
         </button>
       </div>
