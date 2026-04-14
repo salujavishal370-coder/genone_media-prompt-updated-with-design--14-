@@ -29,7 +29,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   className="w-full p-8 flex justify-between items-center text-left"
                 >
-                  <span className="text-2xl font-display font-bold">{faq.q}</span>
+                  <span className="text-2xl font-display font-bold normal-case">{faq.q}</span>
                   {openIndex === i ? <Minus className="text-accent" /> : <Plus className="text-accent" />}
                 </button>
                 <AnimatePresence>

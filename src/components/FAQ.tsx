@@ -11,44 +11,44 @@ const Highlight = ({ children }: { children: React.ReactNode }) => (
 
 const faqs = [
   {
-    question: "I don't have time to shoot content every week. How will this work for me?",
-    answer: <>You don't have to. We shoot all your reels for the month in just <Highlight>two dedicated studio days</Highlight>. Everything—from <Highlight>setup to direction</Highlight> is handled by our team.</>,
+    question: "What services do you offer?",
+    answer: <>At <Highlight>Genone Media</Highlight>, we provide end-to-end digital solutions including <Highlight>web development, graphic design, video editing, and social media marketing</Highlight>. Our services are designed to help businesses build a strong online presence and scale effectively.</>,
   },
   {
     question: "I'm not good on camera. Will I still be able to do this?",
-    answer: <>Absolutely. Our directors specialize in making you feel <Highlight>comfortable and confident</Highlight>. We guide you through every line delivery, body language cue, and script pacing.</>,
+    answer: <>Absolutely. Our team ensures you feel <Highlight>comfortable and confident</Highlight> throughout the process. We guide you with scripting, delivery, and presentation so you can create content naturally without any pressure.</>,
   },
   {
     question: "I don't know what to talk about or what kind of content will work for me.",
-    answer: <>That's exactly what we're here for. We conduct deep <Highlight>market and competitor research</Highlight> to script highly engaging content tailored specifically to your target audience.</>,
+    answer: <>No worries at all. We conduct <Highlight>market research and competitor analysis</Highlight> to create content strategies tailored to your audience. This helps in producing engaging and result-driven content consistently.</>,
   },
   {
     question: "Do you only do video editing, or can you handle web development too?",
-    answer: <>We are a full-scale digital agency. We handle everything from <Highlight>cinematic video production</Highlight> and social media management to building <Highlight>high-performance web applications</Highlight>.</>,
+    answer: <>We are a complete digital agency. Along with <Highlight>professional video editing and content creation</Highlight>, we also build <Highlight>high-performance, scalable websites and web applications</Highlight> tailored to your business needs.</>,
   },
   {
     question: "How long does a typical project take from start to finish?",
-    answer: <>Project timelines vary. Content batches usually take <Highlight>1-2 weeks</Highlight> post-shoot, while comprehensive web development projects can take <Highlight>4-8 weeks</Highlight> depending on complexity.</>,
+    answer: <>Project timelines depend on the scope and complexity. Video and content projects usually take <Highlight>1–2 weeks</Highlight>, while web development projects may take <Highlight>3–6 weeks</Highlight> depending on requirements.</>,
   },
   {
     question: "What platforms do you optimize the content for?",
-    answer: <>We tailor content natively for <Highlight>Instagram Reels, TikTok, YouTube Shorts, and LinkedIn</Highlight>, ensuring correct aspect ratios, safe zones, and platform-specific trends.</>,
+    answer: <>We create and optimize content for platforms like <Highlight>Instagram, Facebook, LinkedIn, and YouTube</Highlight>. Each piece of content is tailored to platform-specific formats, trends, and audience behavior.</>,
   },
   {
     question: "How do we track the performance of the campaigns?",
-    answer: <>We provide <Highlight>detailed monthly analytics reporting</Highlight> covering reach, engagement, conversion metrics, and actionable insights to refine our ongoing strategy.</>,
+    answer: <>We provide <Highlight>detailed performance reports</Highlight> including reach, engagement, and growth metrics. These insights help us continuously optimize strategies for better results and higher ROI.</>,
   },
   {
     question: "Do you work with international clients?",
-    answer: <>Yes! While our shoots are localized, our <Highlight>post-production, web development, and strategy services</Highlight> are available to clients globally via seamless remote workflows.</>,
+    answer: <>Yes, we work with clients globally. Our <Highlight>remote workflow and communication process</Highlight> ensure smooth collaboration for web development, design, and marketing projects worldwide.</>,
   },
   {
     question: "Will I own the rights to all the content and code?",
-    answer: <>100%. Once the project is fully handed over and payments are cleared, all <Highlight>intellectual property rights</Highlight> for the produced assets are transferred directly to you.</>,
+    answer: <>Yes, once the project is completed and delivered, you get full <Highlight>ownership of all assets</Highlight> including website code, designs, and content. Everything is transferred to you with complete transparency.</>,
   },
   {
-    question: "How do we get started with Aether?",
-    answer: <>Simply book a <Highlight>discovery call</Highlight> with us. We'll audit your current digital presence, understand your goals, and propose a highly customized execution plan.</>,
+    question: "How do we get started with Genone Media?",
+    answer: <>Getting started is simple. Just connect with us for a <Highlight>quick consultation</Highlight>, share your requirements, and we’ll provide a customized plan to help you achieve your goals efficiently.</>,
   }
 ];
 
@@ -93,7 +93,7 @@ export default function FAQ() {
                   className="w-full px-6 py-6 md:px-8 md:py-6 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500/50"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h3 className="text-lg md:text-xl font-bold text-white pr-8 tracking-tight">
+                  <h3 className="text-lg md:text-xl font-bold text-white pr-8 tracking-tight normal-case">
                     {faq.question}
                   </h3>
                   <div 

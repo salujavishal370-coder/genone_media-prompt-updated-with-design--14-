@@ -9,6 +9,8 @@ import FAQ from '../components/FAQ';
 import ContactSection from '../components/ContactSection';
 import CTASection from '../components/CTASection';
 import IndustriesSection from '../components/IndustriesSection';
+import graphicDesignImg from '../assets/graphicDesining (1).png';
+import socialMediaImg from '../assets/graphicDesining (2).png';
 
 const services = [
   {
@@ -26,13 +28,13 @@ const services = [
   {
     title: "Graphic Designing",
     desc: "Creative visual identities, branding, and high-impact digital assets.",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
+    image: graphicDesignImg,
     path: "/services/graphic-design",
   },
   {
     title: "Social Media",
     desc: "Strategic content creation and management to boost brand engagement.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+    image: socialMediaImg,
     path: "/services/social-media",
   },
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2, ChevronRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import pritamImg from '../assets/pritam.png';
 
 export default function CTASection() {
   return (
@@ -32,9 +33,9 @@ export default function CTASection() {
             {/* Checkmarks Row */}
             <div className="flex flex-wrap items-center gap-6 md:gap-8 pt-4">
               {[
-                "50+ Industry Sectors",
+                "20+ Industry Sectors",
                 "97% Client Satisfaction",
-                "4200+ Projects"
+                "Trusted for Quality & Consistency"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-zinc-300 text-sm md:text-base font-medium">
                   <CheckCircle2 size={20} strokeWidth={2.5} className="text-fuchsia-500" />
@@ -51,7 +52,7 @@ export default function CTASection() {
             
             {/* Center Main Image */}
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-[#090514] shadow-2xl overflow-hidden z-20">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Professional Expert" className="w-full h-full object-cover" />
+              <img src={pritamImg} alt="Pritam - Professional Expert" className="w-full h-full object-cover" />
             </div>
 
             {/* Floating Top Left */}
