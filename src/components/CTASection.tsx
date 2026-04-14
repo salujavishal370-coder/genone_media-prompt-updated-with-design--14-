@@ -80,7 +80,7 @@ export default function CTASection() {
                 <Star size={16} fill="currentColor" />
               </div>
               <div className="flex items-center gap-2 mt-1">
-                <p className="text-white font-bold text-[15px]">Rahul B.</p>
+                <p className="text-white font-bold text-[15px]">Pritam R.</p>
                 <div className="bg-green-500 rounded-full p-0.5">
                   <CheckCircle2 size={12} className="text-[#090514]" strokeWidth={3} />
                 </div>
