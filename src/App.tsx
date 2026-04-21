@@ -17,12 +17,7 @@ import Portfolio from './pages/Portfolio';
 import ProjectDetail from './pages/ProjectDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Pricing from './pages/Pricing';
 import FAQ from './pages/FAQ';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import Careers from './pages/Careers';
-import Testimonials from './pages/Testimonials';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const ScrollToTop = () => {
@@ -53,12 +48,7 @@ export default function App() {
               <Route path="/portfolio/:id" element={<ProjectDetail />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/pricing" element={<Pricing />} />
               <Route path="/faq" element={<FAQ />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
             </Routes>
           </AnimatePresence>

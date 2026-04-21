@@ -42,9 +42,7 @@ export default function Footer() {
             <h4 className="font-display font-bold mb-6 text-sm uppercase tracking-widest text-fuchsia-500">Agency</h4>
             <ul className="space-y-4">
               <li><Link to="/about" className="hover:text-fuchsia-500 transition-colors">About Us</Link></li>
-              <li><Link to="/testimonials" className="hover:text-fuchsia-500 transition-colors">Testimonials</Link></li>
-              <li><Link to="/careers" className="hover:text-fuchsia-500 transition-colors">Careers</Link></li>
-              <li><Link to="/blog" className="hover:text-fuchsia-500 transition-colors">Journal</Link></li>
+              <li><Link to="/services" className="hover:text-fuchsia-500 transition-colors">Services</Link></li>
               <li><Link to="/contact" className="hover:text-fuchsia-500 transition-colors">Contact</Link></li>
             </ul>
           </div>

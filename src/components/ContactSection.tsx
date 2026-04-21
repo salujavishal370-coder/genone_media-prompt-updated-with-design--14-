@@ -28,7 +28,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-1">Email</h4>
-                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">hello@aether.agency</p>
+                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">tushxrr001@gmail.com</p>
                 </div>
               </div>
               
@@ -38,7 +38,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-1">Phone</h4>
-                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">+1 (555) 000-AETHER</p>
+                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">+91&nbsp;7489725507</p>
                 </div>
               </div>
               
@@ -48,7 +48,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-1">Studio</h4>
-                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">Neo City, NC 90210</p>
+                  <p className="text-white text-lg font-medium group-hover:text-fuchsia-300 transition-colors">Sector 62, Noida, Uttar Pradesh, India</p>
                 </div>
               </div>
             </div>
