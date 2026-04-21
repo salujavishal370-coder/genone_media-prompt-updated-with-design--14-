@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../components/PageWrapper';
 import { Lightbulb, ShieldCheck, Users } from "lucide-react";
-import founderImg from '../assets/fullImgTsx.png';
+import founderImg from '../assets/tusxCroppedImg.png';
 
 export default function About() {
   return (
@@ -51,7 +51,7 @@ export default function About() {
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed">
-              We are more than just a development company — we are a team of passionate 
+              We are more than just a development company — we are a team of passionate
               professionals dedicated to building innovative digital solutions.
             </p>
           </div>
@@ -63,15 +63,15 @@ export default function About() {
             <div className="flex-1 text-center lg:text-left">
 
               <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6">
-                The driving force behind our success is strong leadership and deep 
-                industry experience. With years of expertise in software development 
-                and product engineering, our leadership has contributed across multiple 
-                domains including consultation, system design, business development, 
+                The driving force behind our success is strong leadership and deep
+                industry experience. With years of expertise in software development
+                and product engineering, our leadership has contributed across multiple
+                domains including consultation, system design, business development,
                 and innovation.
               </p>
 
               <p className="text-white/80 font-semibold text-base sm:text-lg mb-8">
-                We are committed to delivering high-quality solutions and building 
+                We are committed to delivering high-quality solutions and building
                 long-term partnerships with our clients.
               </p>
 
@@ -87,20 +87,22 @@ export default function About() {
             </div>
 
             {/* RIGHT IMAGE (FIXED + CLEAN CUTOUT LOOK) */}
-            <div className="flex-1 w-full flex justify-center items-end relative">
+            {/* RIGHT IMAGE (CIRCLE CEO IMAGE) */}
+            <div className="flex-1 w-full flex justify-center items-center relative">
 
               {/* Glow Effect */}
               <div className="absolute w-64 h-64 bg-purple-500/20 blur-3xl rounded-full"></div>
 
-              <img
-                src={founderImg}
-                alt="Founder"
-                className="
-    object-contain
-    w-full
-    h-[400px] sm:h-[500px] md:h-[600px]
-                "
-              />
+              {/* Circle Image Wrapper */}
+<div className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-white/10 shadow-lg relative z-10">
+
+  <img
+    src={founderImg}
+    alt="Founder"
+    className="w-full h-full object-cover"
+  />
+
+</div>
 
             </div>
 
@@ -111,7 +113,7 @@ export default function About() {
         <div className="py-12 md:py-15">
 
           <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 normal-case">
               Our Core Values
             </h2>
             <p className="text-white/60 text-base sm:text-lg md:text-xl">
@@ -123,25 +125,31 @@ export default function About() {
 
             <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
               <Lightbulb className="text-accent mb-6" size={32} />
-              <h3 className="text-lg md:text-xl font-bold mb-4">Top Industry Talent</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-4 normal-case">Top Industry Talent</h3>
               <p className="text-white/50 leading-relaxed text-sm">
-                We focus on bringing the best minds together to deliver exceptional results.
+                We bring together highly skilled professionals who excel in their domains.
+                From developers and designers to strategists, every team member is carefully
+                selected to ensure quality, innovation, and impactful results for every project.
               </p>
             </div>
 
             <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
               <ShieldCheck className="text-accent mb-6" size={32} />
-              <h3 className="text-lg md:text-xl font-bold mb-4">Integrity First</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-4 normal-case">Integrity First</h3>
               <p className="text-white/50 leading-relaxed text-sm">
-                We believe in honesty, transparency, and strong ethical values.
+                We believe trust is the foundation of every successful partnership.
+                Our work is guided by transparency, honesty, and strong ethical values,
+                ensuring consistent delivery and long-term client relationships.
               </p>
             </div>
 
             <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
               <Users className="text-accent mb-6" size={32} />
-              <h3 className="text-lg md:text-xl font-bold mb-4">Open Work Culture</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-4 normal-case">Open Work Culture</h3>
               <p className="text-white/50 leading-relaxed text-sm">
-                We promote a collaborative and inclusive environment.
+                We foster a collaborative and inclusive environment where ideas are valued
+                and creativity thrives. Our culture encourages innovation, teamwork, and
+                continuous learning to deliver the best outcomes.
               </p>
             </div>
 
