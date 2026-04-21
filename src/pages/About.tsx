@@ -1,51 +1,154 @@
 import React from 'react';
 import PageWrapper from '../components/PageWrapper';
-import { Users, Target, Zap, Globe } from 'lucide-react';
+import { Lightbulb, ShieldCheck, Users } from "lucide-react";
+import founderImg from '../assets/finalImg.png';
 
 export default function About() {
   return (
     <PageWrapper>
-      <section className="pt-48 pb-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-4xl mb-32">
-            <h1 className="text-5xl md:text-9xl font-display font-bold tracking-tighter mb-12">
-              WE ARE <span className="block text-6xl md:text-8xl lg:text-[96px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 pb-3">AETHER</span>
+      <section className="pt-24 md:pt-30 pb-20 md:pb-32 px-4 md:px-6">
+
+        {/* ================= HERO SECTION ================= */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-16 md:mb-24">
+
+          {/* LEFT CONTENT */}
+          <div className="flex-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-5 normal-case pl-6 sm:pl-12 md:pl-20 lg:pl-25">
+              About Us
             </h1>
-            <p className="text-xl md:text-3xl text-white/60 leading-relaxed">
-              A collective of designers, developers, and storytellers dedicated to pushing the 
-              boundaries of digital creation. We believe in the power of immersive experiences 
-              to transform brands and engage audiences.
+
+            <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-8 pl-6 sm:pl-12 md:pl-20 lg:pl-25 pr-4 sm:pr-10">
+              We help businesses build and scale their digital presence with modern web
+              development, creative design, and high-quality video solutions — all at a
+              competitive cost.
+            </p>
+
+            <button className="ml-6 sm:ml-12 md:ml-20 lg:ml-25 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-fuchsia-500/30 hover:shadow-fuchsia-500/50 hover:scale-105 transition-all duration-300">
+              Contact Us
+            </button>
+
+            <p className="pl-6 sm:pl-12 md:pl-20 lg:pl-25 text-white/40 mt-4 text-sm">
+              100% Confidential and Secure
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
-            <img src="https://picsum.photos/seed/team1/800/600" alt="Team 1" className="rounded-[3rem] border border-white/10" referrerPolicy="no-referrer" />
-            <img src="https://picsum.photos/seed/team2/800/600" alt="Team 2" className="rounded-[3rem] border border-white/10 md:mt-24" referrerPolicy="no-referrer" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-32">
-            {[
-              { icon: Users, title: 'Collaborative', desc: 'We work closely with our clients to ensure their vision is realized.' },
-              { icon: Target, title: 'Strategic', desc: 'Every decision is backed by data and strategic thinking.' },
-              { icon: Zap, title: 'Innovative', desc: 'We utilize the latest technologies to stay ahead of the curve.' },
-              { icon: Globe, title: 'Global', desc: 'Our team and clients span the globe, bringing diverse perspectives.' },
-            ].map((item, i) => (
-              <div key={i} className="p-10 glass rounded-3xl">
-                <item.icon className="text-accent mb-6" size={32} />
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-surface rounded-[4rem] p-12 md:p-24">
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-12 text-center">OUR MISSION</h2>
-            <p className="text-2xl md:text-4xl text-center text-white/60 max-w-4xl mx-auto leading-tight">
-              "To elevate the digital landscape through exceptional design, cutting-edge technology, 
-              and cinematic storytelling."
-            </p>
+          {/* RIGHT IMAGE */}
+          <div className="flex-1 w-full">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+              alt="Team working"
+              className="rounded-[2rem] md:rounded-[3rem] border border-white/10 object-cover w-full h-[250px] sm:h-[350px] md:h-[450px]"
+            />
           </div>
         </div>
+
+        {/* ================= TEAM SECTION ================= */}
+        <div className="py-12 md:py-15">
+
+          <div className="max-w-4xl mx-auto text-center mb-20 md:mb-24">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 normal-case">
+              Our Team Comprises Experts, Innovators, and Achievers!
+            </h2>
+
+            <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed">
+              We are more than just a development company — we are a team of passionate 
+              professionals dedicated to building innovative digital solutions.
+            </p>
+          </div>
+
+          {/* ================= FOUNDER SECTION ================= */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+
+            {/* LEFT CONTENT */}
+            <div className="flex-1 text-center lg:text-left">
+
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6">
+                The driving force behind our success is strong leadership and deep 
+                industry experience. With years of expertise in software development 
+                and product engineering, our leadership has contributed across multiple 
+                domains including consultation, system design, business development, 
+                and innovation.
+              </p>
+
+              <p className="text-white/80 font-semibold text-base sm:text-lg mb-8">
+                We are committed to delivering high-quality solutions and building 
+                long-term partnerships with our clients.
+              </p>
+
+              <div className="w-16 h-[2px] bg-gradient-to-r from-fuchsia-500 to-indigo-500 mb-6 mx-auto lg:mx-0"></div>
+
+              <p className="text-xl md:text-2xl font-bold normal-case">
+                Tushar Saluja
+              </p>
+              <p className="text-white/50 normal-case">
+                Founder & CEO
+              </p>
+
+            </div>
+
+            {/* RIGHT IMAGE (FIXED + CLEAN CUTOUT LOOK) */}
+            <div className="flex-1 w-full flex justify-center items-end relative">
+
+              {/* Glow Effect */}
+              <div className="absolute w-64 h-64 bg-purple-500/20 blur-3xl rounded-full"></div>
+
+              <img
+                src={founderImg}
+                alt="Founder"
+                className="
+    object-contain
+    w-full
+    h-[400px] sm:h-[500px] md:h-[600px]
+                "
+              />
+
+            </div>
+
+          </div>
+        </div>
+
+        {/* ================= CORE VALUES ================= */}
+        <div className="py-12 md:py-15">
+
+          <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
+              Our Core Values
+            </h2>
+            <p className="text-white/60 text-base sm:text-lg md:text-xl">
+              We are committed to delivering reliable, high-quality solutions that create real impact.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 max-w-6xl mx-auto">
+
+            <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
+              <Lightbulb className="text-accent mb-6" size={32} />
+              <h3 className="text-lg md:text-xl font-bold mb-4">Top Industry Talent</h3>
+              <p className="text-white/50 leading-relaxed text-sm">
+                We focus on bringing the best minds together to deliver exceptional results.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
+              <ShieldCheck className="text-accent mb-6" size={32} />
+              <h3 className="text-lg md:text-xl font-bold mb-4">Integrity First</h3>
+              <p className="text-white/50 leading-relaxed text-sm">
+                We believe in honesty, transparency, and strong ethical values.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-10 glass rounded-3xl hover:scale-105 transition-all duration-300">
+              <Users className="text-accent mb-6" size={32} />
+              <h3 className="text-lg md:text-xl font-bold mb-4">Open Work Culture</h3>
+              <p className="text-white/50 leading-relaxed text-sm">
+                We promote a collaborative and inclusive environment.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
       </section>
     </PageWrapper>
   );

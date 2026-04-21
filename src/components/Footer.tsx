@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="text-3xl font-display font-bold tracking-tighter mb-8 block">
-              AETHER<span className="text-accent">.</span>
+              Gen One <span className="text-fuchsia-500">Media</span>
             </Link>
             <p className="text-white/50 text-lg max-w-md mb-8">
               Crafting digital excellence through high-end motion, design, and development. 
@@ -29,30 +29,30 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold mb-6 text-sm uppercase tracking-widest text-white/40">Services</h4>
+            <h4 className="font-display font-bold mb-6 text-sm uppercase tracking-widest text-fuchsia-500">Services</h4>
             <ul className="space-y-4">
-              <li><Link to="/services/video" className="hover:text-accent transition-colors">Video Editing</Link></li>
-              <li><Link to="/services/design" className="hover:text-accent transition-colors">Graphic Design</Link></li>
-              <li><Link to="/services/web" className="hover:text-accent transition-colors">Web Development</Link></li>
-              <li><Link to="/portfolio" className="hover:text-accent transition-colors">Motion Graphics</Link></li>
+              <li><Link to="/services/video" className="hover:text-fuchsia-500 transition-colors">Video Editing</Link></li>
+              <li><Link to="/services/design" className="hover:text-fuchsia-500 transition-colors">Graphic Design</Link></li>
+              <li><Link to="/services/web" className="hover:text-fuchsia-500 transition-colors">Web Development</Link></li>
+              <li><Link to="/portfolio" className="hover:text-fuchsia-500 transition-colors">Motion Graphics</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-bold mb-6 text-sm uppercase tracking-widest text-white/40">Agency</h4>
+            <h4 className="font-display font-bold mb-6 text-sm uppercase tracking-widest text-fuchsia-500">Agency</h4>
             <ul className="space-y-4">
-              <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link to="/testimonials" className="hover:text-accent transition-colors">Testimonials</Link></li>
-              <li><Link to="/careers" className="hover:text-accent transition-colors">Careers</Link></li>
-              <li><Link to="/blog" className="hover:text-accent transition-colors">Journal</Link></li>
-              <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              <li><Link to="/about" className="hover:text-fuchsia-500 transition-colors">About Us</Link></li>
+              <li><Link to="/testimonials" className="hover:text-fuchsia-500 transition-colors">Testimonials</Link></li>
+              <li><Link to="/careers" className="hover:text-fuchsia-500 transition-colors">Careers</Link></li>
+              <li><Link to="/blog" className="hover:text-fuchsia-500 transition-colors">Journal</Link></li>
+              <li><Link to="/contact" className="hover:text-fuchsia-500 transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:row justify-between items-center pt-12 border-t border-white/5 gap-6">
           <p className="text-white/30 text-sm">
-            © 2026 Aether Creative Agency. All rights reserved.
+            © 2026 Gen One Media. All rights reserved.
           </p>
           <div className="flex gap-8 text-sm text-white/30">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

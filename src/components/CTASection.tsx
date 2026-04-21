@@ -71,7 +71,7 @@ export default function CTASection() {
             </div>
 
             {/* Review Badge Bottom Left */}
-            <div className="absolute bottom-4 left-0 md:-left-4 bg-[#0f0a1d]/80 backdrop-blur-md border border-white/10 p-4 md:p-5 rounded-2xl z-40 shadow-2xl flex flex-col gap-2">
+            <div className="absolute bottom-2 left-0 md:-left-10 bg-[#0f0a1d]/80 backdrop-blur-md border border-white/10 p-4 md:p-5 rounded-2xl z-40 shadow-2xl flex flex-col gap-2">
               <div className="flex gap-1 text-fuchsia-400">
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
@@ -85,7 +85,7 @@ export default function CTASection() {
                   <CheckCircle2 size={12} className="text-[#090514]" strokeWidth={3} />
                 </div>
               </div>
-              <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Past Marketer</p>
+              <p className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Software Developer</p>
             </div>
           </div>
 
