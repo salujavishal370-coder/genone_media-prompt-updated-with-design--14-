@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import { cn } from '../utils/cn';
 import logo from '../assets/genoneLogo.png';
 
@@ -42,12 +41,12 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6',
         scrolled ? 'py-4' : 'py-8',
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible || isOpen ? 'translate-y-0' : '-translate-y-full'
       )}
     >
       <div
         className={cn(
-          "max-w-7xl mx-auto px-6 py-3 rounded-full transition-all duration-500 flex justify-between items-center",
+          "max-w-7xl mx-auto px-6 py-3 rounded-full transition-all duration-500 flex justify-between items-center relative z-50",
           scrolled
             ? 'bg-white/10 backdrop-blur-2xl border border-fuchsia-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]'
             : 'bg-transparent'
@@ -101,6 +100,46 @@ export default function Navbar() {
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </div>
         </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={cn(
+          "md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500",
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Drawer */}
+      <div
+        className={cn(
+          "md:hidden fixed top-0 right-0 h-[100dvh] w-[80vw] sm:w-[350px] bg-slate-900/95 backdrop-blur-xl border-l border-fuchsia-500/30 p-8 shadow-[-20px_0_40px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-in-out z-40",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex flex-col gap-8 mt-24">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                'text-lg uppercase tracking-[0.2em] font-bold transition-all',
+                location.pathname === link.path ? 'text-fuchsia-400' : 'text-white/80 hover:text-white'
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="text-center px-7 py-4 bg-fuchsia-500 text-white text-sm font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] active:scale-95 mt-4"
+          >
+            Start Project
+          </Link>
+        </div>
       </div>
     </nav>
   );

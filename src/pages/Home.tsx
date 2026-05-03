@@ -39,14 +39,6 @@ const services = [
   },
 ];
 
-const projects = [
-  { id: 'neon-genesis', title: 'Neon Genesis', category: 'Video / Motion', image: 'https://picsum.photos/seed/neon/1200/800' },
-  { id: 'aether-os', title: 'Aether OS', category: 'Web / UI', image: 'https://picsum.photos/seed/tech/1200/800' },
-  { id: 'vanguard', title: 'Vanguard', category: 'Branding', image: 'https://picsum.photos/seed/vanguard/1200/800' },
-  { id: 'growth-campaign', title: 'Growth Campaign', category: 'Social Media', image: 'https://picsum.photos/seed/social/1200/800' },
-  { id: 'ad-conversion', title: 'Ad Conversion Boost', category: 'Performance Marketing', image: 'https://picsum.photos/seed/ads/1200/800' },
-];
-
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
