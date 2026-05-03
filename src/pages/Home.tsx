@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PageWrapper from '../components/PageWrapper';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { cn } from '../utils/cn';
 import heroVideo from '../assets/hero.mp4.mp4';
-import FAQ from '../components/FAQ';
-import ContactSection from '../components/ContactSection';
-import CTASection from '../components/CTASection';
-import IndustriesSection from '../components/IndustriesSection';
-import graphicDesignImg from '../assets/graphicDesining (1).png';
-import socialMediaImg from '../assets/graphicDesining (2).png';
+
+const FAQ = lazy(() => import('../components/FAQ'));
+const ContactSection = lazy(() => import('../components/ContactSection'));
+const CTASection = lazy(() => import('../components/CTASection'));
+const IndustriesSection = lazy(() => import('../components/IndustriesSection'));
+import graphicDesignImg from '../assets/graphicDesign.webp';
+import socialMediaImg from '../assets/socialMedia.webp';
 
 const services = [
   {
     title: "Web Development",
     desc: "Building high-performance, scalable web applications with modern frameworks.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=60&w=400",
     path: "/services/web-dev",
   },
   {
     title: "Video Editing",
     desc: "Professional post-production, motion graphics, and cinematic storytelling.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=60&w=400",
     path: "/services/video-editing",
   },
   {
@@ -56,6 +56,7 @@ export default function Home() {
           loop
           muted
           playsInline
+          poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           className="absolute inset-0 w-full h-full object-cover opacity-55"
         />
 
@@ -222,6 +223,8 @@ export default function Home() {
                 <img
                   src={service.image}
                   alt={service.title}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 scale-105 group-hover:scale-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
@@ -264,11 +267,12 @@ export default function Home() {
         </div>
       </section>
 
-      <CTASection />
-      <IndustriesSection />
-
-      <FAQ />
-      <ContactSection />
+      <Suspense fallback={<div className="h-40 flex items-center justify-center bg-[#090514]"><div className="w-8 h-8 border-2 border-fuchsia-500/20 border-t-fuchsia-500 rounded-full animate-spin"></div></div>}>
+        <CTASection />
+        <IndustriesSection />
+        <FAQ />
+        <ContactSection />
+      </Suspense>
     </PageWrapper>
   );
 }

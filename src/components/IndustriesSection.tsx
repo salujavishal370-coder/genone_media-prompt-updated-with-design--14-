@@ -6,7 +6,7 @@ const industries = [
   {
     title: "Technology & SaaS",
     desc: "Scaling digital products and software platforms with cutting-edge UI/UX and strategic marketing.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=60&w=400",
     icon: <Cpu className="w-8 h-8" />,
     color: "from-blue-500/20 to-cyan-500/20",
     accent: "text-blue-400",
@@ -17,7 +17,7 @@ const industries = [
   {
     title: "Media & Entertainment",
     desc: "Crafting highly engaging digital content, video production, and social media campaigns.",
-    image: "https://images.unsplash.com/photo-1603190287605-e6ade32fa852?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1603190287605-e6ade32fa852?auto=format&fit=crop&q=60&w=400",
     icon: <PlayCircle className="w-8 h-8" />,
     color: "from-purple-500/20 to-pink-500/20",
     accent: "text-purple-400",
@@ -28,7 +28,7 @@ const industries = [
   {
     title: "Retail & E-Commerce",
     desc: "Driving seamless sales and brand loyalty through conversion-optimized web platforms.",
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=60&w=400",
     icon: <ShoppingBag className="w-8 h-8" />,
     color: "from-orange-500/20 to-amber-500/20",
     accent: "text-orange-400",
@@ -39,7 +39,7 @@ const industries = [
   {
     title: "Fintech & Finance",
     desc: "Building user trust and simplifying complex data through premium, secure design architectures.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=60&w=400",
     icon: <BarChart3 className="w-8 h-8" />,
     color: "from-emerald-500/20 to-teal-500/20",
     accent: "text-emerald-400",
@@ -134,7 +134,7 @@ export default function IndustriesSection() {
                 industry.animationClass
               )}>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090514] via-[#090514]/80 to-[#090514]/40 z-10" />
-                <img src={industry.image} alt={industry.title} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" />
+                <img src={industry.image} alt={industry.title} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" />
               </div>
             </div>
           ))}

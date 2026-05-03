@@ -7,18 +7,20 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MouseGlow from './components/MouseGlow';
 
+import { lazy, Suspense } from 'react';
+
 // Pages
-import Home from './pages/Home';
-import Services from './pages/Services';
-import VideoEditing from './pages/VideoEditing';
-import GraphicDesign from './pages/GraphicDesign';
-import WebDev from './pages/WebDev';
-import Portfolio from './pages/Portfolio';
-import ProjectDetail from './pages/ProjectDetail';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const VideoEditing = lazy(() => import('./pages/VideoEditing'));
+const GraphicDesign = lazy(() => import('./pages/GraphicDesign'));
+const WebDev = lazy(() => import('./pages/WebDev'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,19 +40,25 @@ export default function App() {
         <Navbar />
         <main className="flex-grow">
           <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/video" element={<VideoEditing />} />
-              <Route path="/services/design" element={<GraphicDesign />} />
-              <Route path="/services/web" element={<WebDev />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/portfolio/:id" element={<ProjectDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-            </Routes>
+            <Suspense fallback={
+              <div className="min-h-screen flex items-center justify-center bg-[#090514]">
+                <div className="w-12 h-12 border-4 border-fuchsia-500/20 border-t-fuchsia-500 rounded-full animate-spin"></div>
+              </div>
+            }>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/services/video" element={<VideoEditing />} />
+                <Route path="/services/design" element={<GraphicDesign />} />
+                <Route path="/services/web" element={<WebDev />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio/:id" element={<ProjectDetail />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+              </Routes>
+            </Suspense>
           </AnimatePresence>
         </main>
         <Footer />
