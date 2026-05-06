@@ -72,38 +72,32 @@ export default function Home() {
 
             {/* Line 1: We build */}
             <div className="overflow-hidden">
-              <motion.span
-                initial={{ y: '110%', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-5xl md:text-7xl lg:text-[96px]"
+              <span
+                className="block text-5xl md:text-7xl lg:text-[96px] animate-slide-up opacity-0"
+                style={{ animationDelay: '0.2s' }}
               >
                 We build
-              </motion.span>
+              </span>
             </div>
 
             {/* Line 2: your brand */}
             <div className="overflow-hidden">
-              <motion.span
-                initial={{ y: '110%', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-5xl md:text-7xl lg:text-[96px]"
+              <span
+                className="block text-5xl md:text-7xl lg:text-[96px] animate-slide-up opacity-0"
+                style={{ animationDelay: '0.38s' }}
               >
                 your brand
-              </motion.span>
+              </span>
             </div>
 
             {/* Line 3: unstoppable. — fuchsia gradient */}
             <div className="overflow-hidden">
-              <motion.span
-                initial={{ y: '110%', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.56, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-5xl md:text-7xl lg:text-[96px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 pb-3"
+              <span
+                className="block text-5xl md:text-7xl lg:text-[96px] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 pb-3 animate-slide-up opacity-0"
+                style={{ animationDelay: '0.56s' }}
               >
                 unstoppable.
-              </motion.span>
+              </span>
             </div>
           </h1>
 
