@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, ChevronRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import pritamImg from '../assets/pritam.png';
+import pritamImg from '../assets/pritam.webp';
 
 export default function CTASection() {
   return (
@@ -52,17 +52,17 @@ export default function CTASection() {
             
             {/* Center Main Image */}
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-[#090514] shadow-2xl overflow-hidden z-20">
-              <img src={pritamImg} alt="Pritam - Professional Expert" className="w-full h-full object-cover" />
+              <img src={pritamImg} alt="Pritam - Professional Expert" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
 
             {/* Floating Top Left */}
             <div className="absolute top-4 left-4 md:top-10 md:left-10 w-20 h-20 md:w-24 md:h-24 rounded-full border-[5px] border-[#090514] overflow-hidden z-30 shadow-xl animate-bounce" style={{ animationDuration: '4s' }}>
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Team member" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=60&w=200" alt="Team member" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
 
             {/* Floating Bottom Right */}
             <div className="absolute bottom-10 right-4 md:bottom-16 md:right-10 w-16 h-16 md:w-20 md:h-20 rounded-full border-[4px] border-[#090514] overflow-hidden z-30 shadow-xl animate-bounce" style={{ animationDuration: '5s', animationDelay: '1s' }}>
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Team member" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=60&w=200" alt="Team member" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
 
             {/* Floating Top Right (Small Dot Graphic) */}

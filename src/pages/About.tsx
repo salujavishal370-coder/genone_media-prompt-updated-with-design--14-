@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../components/PageWrapper';
 import { Lightbulb, ShieldCheck, Users } from "lucide-react";
-import founderImg from '../assets/tusxCroppedImg.png';
+import founderImg from '../assets/tusxCroppedImg.webp';
 
 export default function About() {
   return (
