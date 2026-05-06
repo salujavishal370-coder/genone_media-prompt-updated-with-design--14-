@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import PageWrapper from '../components/PageWrapper';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroVideo from '../assets/hero.mp4.mp4';
@@ -40,9 +40,6 @@ const services = [
 ];
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-
   return (
     <PageWrapper>
 
@@ -57,15 +54,15 @@ export default function Home() {
           muted
           playsInline
           poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          className="absolute inset-0 w-full h-full object-cover opacity-55"
+          className="absolute inset-0 w-full h-full object-cover opacity-55 transform-gpu will-change-transform"
         />
 
         {/* Dark gradient top + bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/75 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/75 z-10 pointer-events-none" />
 
         {/* Ambient fuchsia glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-fuchsia-600/10 blur-[180px] rounded-full pointer-events-none z-10" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-indigo-700/10 blur-[140px] rounded-full pointer-events-none z-10" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-fuchsia-600/10 blur-[180px] rounded-full pointer-events-none z-10 transform-gpu will-change-transform" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-indigo-700/10 blur-[140px] rounded-full pointer-events-none z-10 transform-gpu will-change-transform" />
 
         {/* ---- Centered Content ---- */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pt-30">
