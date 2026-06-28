@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../components/PageWrapper';
 import { Lightbulb, ShieldCheck, Users } from "lucide-react";
-import founderImg from '../assets/tusxCroppedImg.webp';
+import pritamImg from '../assets/pritam.webp';
 
 export default function About() {
   return (
@@ -78,7 +78,7 @@ export default function About() {
               <div className="w-16 h-[2px] bg-gradient-to-r from-fuchsia-500 to-indigo-500 mb-6 mx-auto lg:mx-0"></div>
 
               <p className="text-xl md:text-2xl font-bold normal-case">
-                Tushar Saluja
+                Pritam Raghwanshi
               </p>
               <p className="text-white/50 normal-case">
                 Founder & CEO
@@ -97,8 +97,8 @@ export default function About() {
 <div className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-white/10 shadow-lg relative z-10">
 
   <img
-    src={founderImg}
-    alt="Founder"
+    src={pritamImg}
+    alt="Pritam Raghwanshi"
     className="w-full h-full object-cover"
   />
 

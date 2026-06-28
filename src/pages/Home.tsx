@@ -167,8 +167,8 @@ export default function Home() {
           {/* Top Slider - Moves Right */}
           <div className="flex w-max animate-marquee-right opacity-60">
             {[
-              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Tushar Saluja", "Lahori Zeera",
-              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Tushar Saluja", "Lahori Zeera"
+              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Pritam Raghwanshi", "Lahori Zeera",
+              "Wealthbeats Finserv", "Delhi Dental Clinic", "Adi Kailash", "Pritam Raghwanshi", "Lahori Zeera"
             ].map((brand, i) => (
               <div key={`top-${i}`} className="flex items-center gap-3 shrink-0 px-8 md:px-16 cursor-default">
                 <svg className="w-6 h-6 md:w-8 md:h-8 text-white relative -top-[2px]" viewBox="0 0 24 24" fill="currentColor">

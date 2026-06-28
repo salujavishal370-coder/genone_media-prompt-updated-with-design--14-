@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, ChevronRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import pritamImg from '../assets/pritam.webp';
+import rishabImg from '../assets/software_dev.png';
 
 export default function CTASection() {
   return (
@@ -52,7 +52,7 @@ export default function CTASection() {
             
             {/* Center Main Image */}
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-[#090514] shadow-2xl overflow-hidden z-20">
-              <img src={pritamImg} alt="Pritam - Professional Expert" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+              <img src={rishabImg} alt="Rishab Sharma - Professional Expert" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
 
             {/* Floating Top Left */}
@@ -80,7 +80,7 @@ export default function CTASection() {
                 <Star size={16} fill="currentColor" />
               </div>
               <div className="flex items-center gap-2 mt-1">
-                <p className="text-white font-bold text-[15px]">Pritam R.</p>
+                <p className="text-white font-bold text-[15px]">Rishab Sharma</p>
                 <div className="bg-green-500 rounded-full p-0.5">
                   <CheckCircle2 size={12} className="text-[#090514]" strokeWidth={3} />
                 </div>
