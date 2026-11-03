@@ -30,7 +30,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-white/40 text-sm uppercase tracking-wider">Email</p>
-                  <p className="text-lg font-semibold">tushxrr001@gmail.com</p>
+                  <p className="text-lg font-semibold">genonemedia@gmail.com</p>
                 </div>
               </div>
 
@@ -42,7 +42,7 @@ export default function Contact() {
                 <div>
                   <p className="text-white/40 text-sm uppercase tracking-wider">Phone</p>
                   <p className="text-lg font-semibold">
-                    +91&nbsp;7489725507
+                    +91&nbsp;9406950540
                   </p>
                 </div>
               </div>
