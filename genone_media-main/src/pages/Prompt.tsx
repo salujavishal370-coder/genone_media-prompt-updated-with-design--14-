@@ -9,7 +9,7 @@ type PromptItem = {
   category: PromptCategory;
   description: string;
   image: string;
-  prompt: string;
+  prompt: String;
 };
 
 const prompts: PromptItem[] = [
